@@ -1,4 +1,4 @@
-//===- sconv-opt.cpp: clone of transform-opt with registerSConv -*- C++ -*-===//
+//===- sconv-opt.cpp --------------------------------------------*- C++ -*-===//
 //
 // This file is licensed under the Apache License v2.0 with LLVM Exceptions.
 // See https://llvm.org/LICENSE.txt for license information.
@@ -34,7 +34,7 @@ using namespace llvm;
 
 /// Structure containing command line options for the tool, these will get
 /// initialized when an instance is created.
-struct MlirTransformOptCLOptions {
+struct MlirSConvOptCLOptions {
   cl::opt<bool> allowUnregisteredDialects{
       "allow-unregistered-dialect",
       cl::desc("Allow operations coming from an unregistered dialect"),
@@ -88,7 +88,7 @@ struct MlirTransformOptCLOptions {
 /// not strictly necessary in the tool source file that is not being used as a
 /// library (where the options would pollute the global list of options), it is
 /// good practice to follow this.
-static llvm::ManagedStatic<MlirTransformOptCLOptions> clOptions;
+static llvm::ManagedStatic<MlirSConvOptCLOptions> clOptions;
 
 /// Explicitly registers command-line options.
 static void registerCLOptions() { *clOptions; }

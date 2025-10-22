@@ -1,10 +1,13 @@
-cmake_minimum_required(VERSION 3.13.4)
-project(SConvDialect LANGUAGES CXX)
-add_custom_target(SConv)
+cmake_minimum_required(VERSION 3.22)
 
-# Defina o caminho para o LLVM e MLIR
-set(LLVM_DIR $HOME/work/llvm-project/build/lib/cmake/llvm)
-set(MLIR_DIR $HOME/work/llvm-project/build/lib/cmake/mlir)
+project(
+    SConvDialect
+        VERSION     0.1.0
+        DESCRIPTION "Sliced Convolutioon Algorithm in MLIR Transform."
+        LANGUAGES   CXX C
+)
+
+add_custom_target(SConv)
 
 find_package(LLVM REQUIRED CONFIG)
 find_package(MLIR REQUIRED CONFIG)
