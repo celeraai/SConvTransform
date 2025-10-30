@@ -9,12 +9,15 @@
 // @brief Implements the SConv Transform dialect extension (init + ops).
 //
 // Debugging
-//   Use: `transform-opt <args> -debug-only=SConv`
+//   Use: `sconv-opt <args> -debug-only=SConv`
 //
 // Dialect loading
 //   - Dependent dialects (used by transform ops): Linalg.
 //   - Generated dialects (may appear in payload results): Affine, Arith, Index,
 //     SCF, Tensor.
+//
+// Paper reference
+//   - Using MLIR Transform to Design Sliced Convolution Algorithm (see Readme)
 //
 // Paper anchors
 //   - CSA and schedule selection (IS/WS): Section 2.2 / 5.2
